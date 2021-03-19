@@ -1,10 +1,10 @@
-<h3>{{hero.name | uppercase}} Details</h3>
-<div><span>id: </span>{{hero.id}}</div>
-<div><span>name: </span>{{hero.name}}</div>
+<div *ngIf="selectedHero">
+  <h3>{{selectedHero.name | uppercase}} Details</h3>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div><span>name: </span>{{selectedHero.name}}</div>
 
-<div>
   <label for="name">Hero name: </label>
-  <input id="name" [(ngModel)]="hero.name" placeholder="name">
+  <input id="name" [(ngModel)]="selectedHero.name" placeholder="name">
 </div>
 
 <h2>My Heroes</h2>
