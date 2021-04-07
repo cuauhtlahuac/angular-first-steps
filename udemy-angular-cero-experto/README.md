@@ -22,3 +22,24 @@ Superset del javascript standard. Si conoces Javascript mínimo conoces el 80% d
 Por ejemplo con un código de Javascript no se puede saber el tipo de dato y características de un parámetro. Esto beneficia la velocidad de escritura pero dificulta su mantenimiento.
 
 Mejora el intellisense, podemos ver los tipos de un valor y si son opcionales.
+
+### Introducción a TypeScript
+
+- Tipos básicos
+
+- Objetos, arreglos e interfaces
+
+- Funciones y sus argumentos
+
+- Desestructuración de arreglos y objetos
+
+- Importaciones y exportaciones
+
+- Clases, constructores
+
+- Tipos genéricos
+
+- Decoradores
+
+- Encadenamiento opcional
+
