@@ -24,4 +24,5 @@ Al final vamos a terminar un proyecto construido con todos los puntos aprendidos
   - Para poder usar esta directiva de angular se necesita importar el modulo `{ FormsModule }` en el archivo app.module.ts
   - ngModel es una característica de FormsMoules, por eso para usarlo necesitamos importar FormsModule
 
+**Para agregar bootstrap**: checar en node-modules y agregar la ruta en amgular.json en el array de styles.
 
