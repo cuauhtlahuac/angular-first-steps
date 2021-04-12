@@ -10,3 +10,7 @@
   - Lo agregamos en el NgModule decorator en la propiedad del objeto array declarations.
 - Crear un component con CLI:
   - en terminal escribir `ng generate component`  ó `ng g  c` + Nombre del comppnente
+
+### Template and Styles
+- Template: Puede incluso cambiar el templateUrl por template y escribir la estructura html directamente , se pueden usar string literals backticks.
+- Styles: Podemos usar la propiedad styles para agregar styles directamente con string litterals
