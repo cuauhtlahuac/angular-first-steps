@@ -14,3 +14,7 @@
 ### Template and Styles
 - Template: Puede incluso cambiar el templateUrl por template y escribir la estructura html directamente , se pueden usar string literals backticks.
 - Styles: Podemos usar la propiedad styles para agregar styles directamente con string litterals
+
+## Selector
+- Funciona igual que el css selector, como atribute selector `[app-component]`. Select by Id no funciona, ni los pseudo selectors.
+
