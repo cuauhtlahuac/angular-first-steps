@@ -18,3 +18,10 @@
 ## Selector
 - Funciona igual que el css selector, como atribute selector `[app-component]`. Select by Id no funciona, ni los pseudo selectors.
 
+## Databinding
+
+- Communication: Comunica el código de typeScript con el HTML template.
+
+### String Interpolation:
+
+- Puedes usar `{{}}` syntax, dentro puedes poner typescript expressions. Siempre al final retornarán un string.
