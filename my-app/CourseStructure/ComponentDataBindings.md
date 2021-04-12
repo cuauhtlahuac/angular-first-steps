@@ -26,3 +26,6 @@
 
 - Puedes usar `{{}}` syntax, dentro puedes poner typescript expressions. Siempre al final retornarán un string.
 - Property binding: `<button [property]="typescript statement"` con esta sintaxis le indicas a Angular que esta será una propiedad del elemento dinámica.
+
+### Passing and Using Data With Event Binding
+- $event es la forma en que le pasamos la información del evento a el metodo
