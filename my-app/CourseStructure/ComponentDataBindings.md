@@ -29,3 +29,6 @@
 
 ### Passing and Using Data With Event Binding
 - $event es la forma en que le pasamos la información del evento a el metodo
+
+### Tow way binding
+- Es la forma de que Angular conecta y hace update al mismo tiempo de un valor

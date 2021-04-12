@@ -1,5 +1,10 @@
-<label for="">Label</label>
-<input type="text" (input)="onUpdateServerName($event)">
+<label for="">No Two Ways</label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+
+<label for="">Data Binding</label>
+<input type="text" class="form-control" [(ngModel)]="serverName" >
+<p>{{serverName}}</p>
+<hr>
 <button
 class="btn btn-primary"
 [disabled]="!allowNewServer"
@@ -10,5 +15,4 @@ class="btn btn-primary"
 
 <!-- <p [innerText]="allowNewServer"></p> -->
 <p [innerText]="serverCreationStatus"></p>
-<p>{{serverName}}</p>
 <app-server></app-server>
