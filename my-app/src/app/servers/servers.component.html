@@ -1,1 +1,6 @@
-<p>servers works!</p>
+<button
+class="btn btn-primary"
+[disabled]="!allowNewServer"
+>Click</button>
+<p [innerText]="allowNewServer"></p>
+<app-server></app-server>

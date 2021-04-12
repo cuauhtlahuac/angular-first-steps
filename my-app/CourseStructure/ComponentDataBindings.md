@@ -25,3 +25,4 @@
 ### String Interpolation:
 
 - Puedes usar `{{}}` syntax, dentro puedes poner typescript expressions. Siempre al final retornarán un string.
+- Property binding: `<button [property]="typescript statement"` con esta sintaxis le indicas a Angular que esta será una propiedad del elemento dinámica.
