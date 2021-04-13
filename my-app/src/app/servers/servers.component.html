@@ -1,9 +1,5 @@
 <label for="">Data Binding</label>
 <input type="text" class="form-control" [(ngModel)]="serverName" >
-<p *ngIf="serverCreated else noServe">server name: {{serverName}}</p>
-<ng-template #noServe>
-  <p>No server created</p>
-</ng-template>
 <hr>
 <button
 class="btn btn-primary"
