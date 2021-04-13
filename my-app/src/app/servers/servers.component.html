@@ -1,6 +1,6 @@
 <label for="">Data Binding</label>
 <input type="text" class="form-control" [(ngModel)]="serverName" >
-<p>{{serverName}}</p>
+<p *ngIf="serverCreated">server name: {{serverName}}</p>
 <hr>
 <button
 class="btn btn-primary"

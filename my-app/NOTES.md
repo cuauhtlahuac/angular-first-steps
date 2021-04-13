@@ -4,7 +4,7 @@
 
 * The Basics.
 * [Component & Data bindings](./CourseStructure/ComponentDataBindings.md).
-* Directives.
+* [Directives](./CourseStructure/Directives.md).
 * Service & Dependecy Injection
 * Routing
 * Observables: Async code
