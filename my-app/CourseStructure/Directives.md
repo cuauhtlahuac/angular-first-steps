@@ -9,3 +9,7 @@
 - Are for styles, to change tyles
 - [ngStyle] Expect a javascript object with styles
 - [ngClass] To apply dynamically css classes when a condition is true
+
+### ngFor directive
+
+`*ngFor`: To iterate some element

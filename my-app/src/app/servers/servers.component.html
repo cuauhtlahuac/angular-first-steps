@@ -3,12 +3,12 @@
 <hr>
 <button
 class="btn btn-primary"
-[disabled]="!allowNewServer"
+[disabled]="!allowNewServer || serverName.length <= 0"
 (click)="onCreateServer()"
 >
   Create Server
 </button>
 
-<!-- <p [innerText]="allowNewServer"></p> -->
 <p [innerText]="serverCreationStatus"></p>
-<app-server></app-server>
+
+<app-server *ngFor="let serve of servers"></app-server>
