@@ -145,3 +145,38 @@ example:
     this.name: nameInput.value;
   }
 ```
+
+## Getting Access to Template & DOM with **'@ViewChild()'**
+
+- [Official Doc](https://angular.io/api/core/ViewChild).
+
+- A el viewChild(), como primer parametro se le pasa un string selector, es decir el nombre la referencia local. También se le puede pasar un componente, pero tenemos que estár obviamente fuera del scope.
+- Diferente al local reference aquí nos va a regresar un ElementRef, este se debe asignar al Elemento referenciado como type, y debemos importarlo del core
+- Si no se tiene acceso en ngOnit pasar static a false
+
+```ts
+  // Para versiones superiores a la 8 se agrega {static: true}, 
+  @ViewChild('someContentInput', {static: true}) someContentInput: ElementRef;
+```
+
+example:
+  HTML:
+```html
+<input
+type="text"
+#someContentInput
+>
+```
+  TS:
+```ts
+export class ExampleComponent (){
+  name = '';
+  @ViewChild('someContentInput', {static: true}) someContentInput: ElementRef;
+
+  onDoSomething(someInput: HTMLInputElement) {
+    this.name = someInput.value;
+  }
+}
+```
+
+
