@@ -62,3 +62,57 @@ syntax:
 ```ts
 @Input('aliasElement')
 ```
+
+## Binding to Custom Events
+
+- Es parecido a custom element pero con metodos.
+
+syntax:
+  * template:
+  ```html
+  <app-any (customEvent)="onCustomAdded($event)"></app-any>
+  ```
+  * typescript:
+    ```ts
+    onCustomAdded(eventData){
+      // do something...
+    }
+    ```
+course example se define el evento en AppComponent que es el que llama a app-Cockpit y le va a pasar los metodos:
+  ```ts
+  export class AppComponent {
+
+  serverElements = [ { type: 'server', name: 'TestServer',... } ]
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}){
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+  }
+  ```
+    - el parametro que se pasa como $event es lo que se va arecibir como parametro del metodo, esto se va a llamar en el componente Cockpit como serverCreated
+  ```html
+    <app-cockpit (serverCreated)="onServerAdded($event)"><app-cockpit/>
+  ```
+
+  custom Event:
+    - Con EventEmitter se usa presisamente para decirle a angular que ese evento se enviará o saldra ó emitirá a otro componente, es importante también especificar con el decorador @Output to binding it outside. 
+  
+  ```ts
+    export class CockpitComponent implements OnInit {
+      @Output() serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+      newServerName = '';
+      newServerContent = '';
+
+      onAddServer(){
+        // Aquí emitimos los datos que se va a reicibir afuera. es como un ¡Hadouken!
+        this.serverCreated.emit({
+          serverName: this.newServerName,
+          serverContent: this.serverContent,
+        })
+      }
+    }
+  ```
