@@ -116,3 +116,32 @@ course example se define el evento en AppComponent que es el que llama a app-Coc
       }
     }
   ```
+
+  ## Using Local References in Templates
+
+  - Para crear una variable que se pueda usar dentro del template, sólo ahí y no fuera de él.
+  - '#' + el nombre que hace referencia al elemento, no es un valor sino toda la referencia al elemento html y todas sus propiedades
+
+example:
+
+  HTML:
+
+```html
+  <input
+    type="text"
+    #inputReference
+  >
+
+  <button
+    class="btn"
+    (click)="onAddSome(inputReference)"
+  >
+```
+
+  Typescript:
+
+```ts
+  onAddSome(nameInput: HTMLInputElement) {
+    this.name: nameInput.value;
+  }
+```
