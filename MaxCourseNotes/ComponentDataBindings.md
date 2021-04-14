@@ -179,4 +179,21 @@ export class ExampleComponent (){
 }
 ```
 
+## Components with ng-content
 
+- Por default, todo lo que pongas entre las referencias de componentes tipo ```<app-some></app-some>``` ¡se pierde!, simply removed from the DOM.
+- Podemos usar ```<ng-content></ng-content>``` para poder projectar lo de adentro.
+
+```html
+  <app-element
+    *ngFor="let someElement of someElements"
+    [aliasElement]="someElement"
+  >
+    <ng-content>
+      <p>
+        <strong *ngIf="someElement.type" === 'someType'>
+        {{ someElement.content }}
+      </p>
+    </ng-content>  
+  </app-element>
+```
