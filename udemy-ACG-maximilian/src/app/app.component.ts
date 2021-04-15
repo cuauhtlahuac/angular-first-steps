@@ -6,9 +6,10 @@ import { Component } from '@angular/core';
 	styleUrls: [ './app.component.css' ],
 })
 export class AppComponent {
-	showFeature: boolean;
+	showFeature: boolean = true;
 
 	onNavigate(event: string) {
-		this.showFeature = event === 'recipe' ? true : false;
+		console.log({event});
+		this.showFeature = event !== 'recipe' ? false : true;
 	}
 }
