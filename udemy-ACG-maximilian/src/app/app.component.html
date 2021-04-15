@@ -1,6 +1,7 @@
-  <app-header></app-header>
+  <app-header
+    (showRecipesView)="onShowComponent($event)"
+  ></app-header>
   <div class="container">
-    
-    <app-recipes></app-recipes>
-    <app-shopping-list></app-shopping-list>
+    <app-recipes *ngIf="showReceipt"></app-recipes>
+    <app-shopping-list *ngIf="!showReceipt"></app-shopping-list>
   </div>
