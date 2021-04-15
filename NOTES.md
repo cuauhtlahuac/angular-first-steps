@@ -5,16 +5,16 @@
 * The Basics.
 * [Component & Data bindings](./CourseStructure/ComponentDataBindings.md).
 * [Directives](./CourseStructure/Directives.md).
-* Service & Dependecy Injection
-* Routing
-* Observables: Async code
-* Forms
-* Pipes:
-* Http:
+* Service & Dependecy Injection *
+* Routing * 
+* Observables: Async code *
+* Forms *
+* Pipes: *
+* Http: *
 * Authentication:
 * Optimizations & NgModules
 * Deployment
-* Animations & Testing
+* Animations & Testing *
 
 Al final vamos a terminar un proyecto construido con todos los puntos aprendidos
 

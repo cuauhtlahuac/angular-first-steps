@@ -197,3 +197,53 @@ export class ExampleComponent (){
     </ng-content>  
   </app-element>
 ```
+
+# Lifecycles
+
+[Documentation](https://angular.io/guide/lifecycle-hooks)
+
+## ngOnChanges
+
+- Se llama después de por ejemplo la propuedad input cambia.
+- Se usa mucho con los componentes que reciben nuevos valores, en general los que tienen los @Input
+- Como argumento recibe los cambios, con el valor previo y el nuevo valor entre otros.
+
+## ngOnInit
+
+- Se llama cuando el componente es inicialzado
+- Corre justo después del constructor
+- Aqui todavía no tenemos accesso al template
+
+## ngDoCheck
+
+- Se llama durante cada cambio detectado, cualquier evento disparará ngDoCheck, hayq ue tener cuidado de sólo usarlo para necesidades muy especificas
+
+## ngAfterContentInit
+
+- Se llama despues de que el contenido projectado dentro de ng-content se ah inicializado.
+-  Solo se llamará una vez.
+
+## ngAfterContentChecked
+
+- Llamado cada vez que el contenido projectado dentro de ng-content ha sido checado.
+
+## ngAfterViewInit
+
+- Llamado cada vez que la vista del componente y sus child views se inicializaron.
+- Aquí ya tenemos acceso al template
+
+## After View Checked
+
+- Llamado cada vez qie ña vista y sus hijos se han checkado
+
+## ngOnDetroy
+
+- ComponentWillUnmount? Se llama una vez que el componente se va a destruir y remover del DOM.
+
+
+
+
+
+### Good practice to use Lifecycles
+
+- Add he lifecycles methods to de implement list.
