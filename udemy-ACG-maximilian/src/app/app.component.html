@@ -1,7 +1,7 @@
   <app-header
-    (showRecipesView)="onShowComponent($event)"
+    (featureSelected)="onNavigate($event)"
   ></app-header>
   <div class="container">
-    <app-recipes *ngIf="showReceipt"></app-recipes>
-    <app-shopping-list *ngIf="!showReceipt"></app-shopping-list>
+    <app-recipes *ngIf="showFeature"></app-recipes>
+    <app-shopping-list *ngIf="!showFeature"></app-shopping-list>
   </div>

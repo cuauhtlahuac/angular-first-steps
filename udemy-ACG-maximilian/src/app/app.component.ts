@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: [ './app.component.css' ],
 })
 export class AppComponent {
-  showReceipt: boolean;
+	showFeature: boolean;
 
-  onShowComponent(event: boolean){
-    this.showReceipt = event;
-  }
+	onNavigate(event: string) {
+		this.showFeature = event === 'recipe' ? true : false;
+	}
 }

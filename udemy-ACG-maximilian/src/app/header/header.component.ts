@@ -5,16 +5,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
 	collapsed: boolean = true;
-	showRecipes: boolean = true;
-	@Output() showRecipesView = new EventEmitter<boolean>();
+	@Output() featureSelected = new EventEmitter<string>();
 
-	onRecipesClick() {
-		this.showRecipes = true;
-		this.showRecipesView.emit(this.showRecipes);
-	}
-
-	onShoppingClick() {
-		this.showRecipes = false;
-		this.showRecipesView.emit(this.showRecipes);
+	onSelect(feature: string) {
+		this.featureSelected.emit(feature);
 	}
 }
