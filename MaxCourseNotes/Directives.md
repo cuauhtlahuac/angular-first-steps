@@ -5,6 +5,7 @@
 - `*` when we use the star is because is a structural directive, that means is that gonna change the structure of DOM.
 - `#` To manage internal variables inside the template.
 
+___
 ### attribute directives
 - Are for styles, to change tyles
 - [ngStyle] Expect a javascript object with styles
@@ -14,8 +15,10 @@
 
 `*ngFor`: To iterate some element
 
+___
 ## Attribute vs Structural Directives
 
+___
 ### **Atribute Directives**: 
   - Sólo afecta al elemento al que ah sido adherido.
   - Luce como un atribute HTML.
@@ -102,7 +105,7 @@
   - Justo después de llamar la directiva mencionada, ponemos el evento que va a escuchar, en este casi es mouseover
 
   ```ts
-  import { Directive, ElementRef, RendererV2 } from '@angular/core'  
+  import { Directive, ElementRef, RendererV2, HostListener } from '@angular/core'  
 
   @Directive({
     selector: '[appBetterName]'
@@ -124,6 +127,37 @@
   ```
 
   - Se agrega de la misma forma en la propiedad del componente a escuchar
+
+#### Using HostBinding to Bind to Host Properties
+
+  - Si lo que queremos es solo cambiar el color del fondo, hay una forma más facil de hacerlo con la directiva @HostBiding
+  - Como primer parametro debemos pasarle el componente que queremos bindear
+
+  ```ts
+  import { Directive, HostBinding } from '@angular/core'  
+
+  @Directive({
+    selector: '[appBetterName]'
+  })
+
+  export class BetterNameDirective implements OnInit {
+    @HostBinding('style.backgroundColor') nombreDelStyle: string;
+    constructor() {}
+
+    @HostListener('mouseenter') nombreQueQuieras() {
+      this.nombreDelStyle === 'blue';
+    }
+
+    @HostListener('mouseleave') otroNombre() {
+      this.nombreDelStyle === 'lime';
+    }
+  }
+
+  ```
+
+  - Se agrega exactamente igual
+
+___
 
 ### Structurl Directives:
 
