@@ -49,4 +49,5 @@ Hay tres opciones para el view encapsulation:
 - Nombrar al folder y el componente que va a almacenar con el mismo nombre.
 - Podemos buscar en google Element + Properties o Events para ver las opciones que tenemos para ángular.
 - Para **debuggear** podemos usar el inspector de google, podemos buscar algún archivo especifico en los Sources webpack en la carpeta con un punto como nombre; dentro encontraremos los archivos de la carpeta src con el arbol de los archivos ts creados. Tambien existe una herramienta llamada **Augury** que la encontramos en las chrome extension de google.
-- El **css** declarado en el componente es encapsulado para sólo ser válido en el componente dónde se usa,
+- El **css** declarado en el componente es encapsulado para sólo ser válido en el componente dónde se usa.
+- There is Property Binding, Event Binding, Two Way Binding and String Interpolation.

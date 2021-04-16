@@ -240,10 +240,7 @@ export class ExampleComponent (){
 
 - ComponentWillUnmount? Se llama una vez que el componente se va a destruir y remover del DOM.
 
-
-
-
-
+___
 ### Good practice to use Lifecycles
 
 - Add he lifecycles methods to de implement list.

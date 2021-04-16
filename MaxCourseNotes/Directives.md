@@ -157,6 +157,48 @@ ___
 
   - Se agrega exactamente igual
 
+#### Custom Property Binding Directives
+
+ ```ts
+  import { Directive, HostBinding } from '@angular/core'  
+
+  @Directive({
+    selector: '[appBetterName]'
+  })
+
+  export class BetterNameDirective implements OnInit {
+    @Input() defaultColor: string = 'transparent';
+    @Input() highLightColor: string = 'blue; 
+    @HostBinding('style.backgroundColor') nombreDelStyle: string = this.defaultColor;
+    constructor() {}
+
+    OnInit() {
+      this.nombreDelStyle === defaultColor;
+    }
+
+    @HostListener('mouseenter') nombreQueQuieras() {
+      this.nombreDelStyle === highLightColor;
+    }
+
+    @HostListener('mouseleave') otroNombre() {
+      this.nombreDelStyle === defaultColor;
+    }
+  }
+
+  ```
+
+  Para hacer uso de la Bind Directive dentro de un template:
+
+  ```html
+  <p
+   appBetterName
+   [defaultColor]="yellow" 
+   [highLightColor]="red"
+  >
+  ```
+
+  - Ahora le podemos pasar custom color para los diferentes casos.
+
 ___
 
 ### Structurl Directives:
