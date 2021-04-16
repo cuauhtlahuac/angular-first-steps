@@ -131,7 +131,7 @@ ___
 #### Using HostBinding to Bind to Host Properties
 
   - Si lo que queremos es solo cambiar el color del fondo, hay una forma más facil de hacerlo con la directiva @HostBiding
-  - Como primer parametro debemos pasarle el componente que queremos bindear
+  - Como primer parametro debemos pasarle la propedad que queremos cambiar y si queremos agregar un nodo más lo especificamos con camel case, por ejemplo:  `style.backgroundColor`
 
   ```ts
   import { Directive, HostBinding } from '@angular/core'  
