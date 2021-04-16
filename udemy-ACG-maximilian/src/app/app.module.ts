@@ -9,6 +9,7 @@ import { RecipieDetailComponent } from './recipes/recipie-detail/recipie-detail.
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RecipieItemComponent } from './recipes/recipie-list/recipie-item/recipie-item.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RecipieItemComponent } from './recipes/recipie-list/recipie-item/recipi
     RecipieItemComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

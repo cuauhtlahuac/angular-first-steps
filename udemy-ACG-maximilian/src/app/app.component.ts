@@ -9,7 +9,6 @@ export class AppComponent {
 	showFeature: boolean = true;
 
 	onNavigate(event: string) {
-		console.log({event});
 		this.showFeature = event !== 'recipe' ? false : true;
 	}
 }
