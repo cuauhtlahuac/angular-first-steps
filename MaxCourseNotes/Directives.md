@@ -69,7 +69,7 @@
 
 ```ts
 
-  import { Directive, OnInit, ElementRef, Renderer2 } from '@angular/core'  
+  import { Directive, OnInit, ElementRef, RendererV2 } from '@angular/core'  
 
   @Directive({
     selector: '[appBetterName]' // Ya no es necesario cuando la llamemos usar los corchetes, recordemos como funciona un selector
@@ -77,7 +77,7 @@
 
   export class BetterNameDirective implements OnInit {
    
-    constructor(private elRef: ElementRef, private renderer: Renderer2 ) {
+    constructor(private elRef: ElementRef, private renderer: RendererV2 ) {
 
     }
 
@@ -95,7 +95,35 @@
   ```html
   <p appBetterName> // Sólo lo agregamos como un atributo mas del elemento, usamos el nombre del selector.
   ```
-  
+
+#### Using HostListener to Listen Events.
+
+  - Ahora, si queremos cambiar el estilo en la directiva creada vamos a usar @HostListener decorator
+  - Justo después de llamar la directiva mencionada, ponemos el evento que va a escuchar, en este casi es mouseover
+
+  ```ts
+  import { Directive, ElementRef, RendererV2 } from '@angular/core'  
+
+  @Directive({
+    selector: '[appBetterName]'
+  })
+
+  export class BetterNameDirective implements OnInit {
+   
+    constructor(private elRef: ElementRef, private renderer: RendererV2 ) {}
+
+    @HostListener('mouseenter') nombreQueQuieras(eventData: Event) {
+      this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'red', false, false);
+    }
+
+    @HostListener('mouseleave') otroNombre(eventData: Event) {
+      this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue', false, false);
+    }
+  }
+
+  ```
+
+  - Se agrega de la misma forma en la propiedad del componente a escuchar
 
 ### Structurl Directives:
 
