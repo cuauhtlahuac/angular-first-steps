@@ -32,6 +32,7 @@
 
 - Se puede crear un nuevo archivo con la siguiente estructura `basic.directive.ts`
 - Se crea una clase parecida a el componente, pero en este caso se importa `@Directive({})`
+- Es importante agregar que usar esta forma no es una buena práctica, por el uso del ElementRef, pero también por el DOM, posteriormente usaremos Renderer2 para evitar problemas con los service  Workers.
   
   Se configura por lo regular de la siguiente forma:
 
@@ -58,14 +59,49 @@
   Para hacer uso de la directiva dentro de un template:
 
   ```html
-  <p appBasicName> // Sólo lo agregamos como un atributo mas del elemento
+  <p appBasicName> // Sólo lo agregamos como un atributo mas del elemento, usamos el nombre del selector.
   ```
+
+
+####  Using the Render to build a **Better** Attribute Directive.
+
+  - Se basa en la misma forma que creamos antes.
+
+```ts
+
+  import { Directive, OnInit, ElementRef, Renderer2 } from '@angular/core'  
+
+  @Directive({
+    selector: '[appBetterName]' // Ya no es necesario cuando la llamemos usar los corchetes, recordemos como funciona un selector
+  })
+
+  export class BetterNameDirective implements OnInit {
+   
+    constructor(private elRef: ElementRef, private renderer: Renderer2 ) {
+
+    }
+
+    OnInit() {
+      // setStyle como primer argumento el elemento de referencia,
+      // como segundo la propiedad,
+      // tercero el valor detalles como el !important
+      this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'red')
+    }
+  }
+
+  ```
+  Para hacer uso de la directiva dentro de un template:
+
+  ```html
+  <p appBetterName> // Sólo lo agregamos como un atributo mas del elemento, usamos el nombre del selector.
+  ```
+  
 
 ### Structurl Directives:
 
 - Luce como un atributo HTML pero tiene un asterisco que lo distingue.
 - Afecta a toda el area en el DOM, elemento agregados y removidos.
-- ¡ No puedes anidar dos en el mimsmo tiempó
+- ¡No puedes anidar dos en el mismo Elemento
 
 #### *ngFor
 
