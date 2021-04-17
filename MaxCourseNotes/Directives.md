@@ -206,8 +206,44 @@ ___
 - Luce como un atributo HTML pero tiene un asterisco que lo distingue.
 - Afecta a toda el area en el DOM, elemento agregados y removidos.
 - ¡No puedes anidar dos en el mismo Elemento
-
+___
 #### *ngFor
-
+___
 #### *ngIf
+___
 
+#### Building a Structural Directive
+
+  - En el ejemplo si el inpuit parametro llamado appUnless cambia quiero ejecutar un metodo, para eso usamos el `set` keyword, esto convierte la propiedad en un metodo aunque sigue siendo una propiedad que ejecutara algo si cambia.
+  - Ahora un less necesita recibir el valor como parametro, es lo que recibira el input.
+  - ***! No olvidar agregar en el archivo en el módulo app.module.ts***.
+  - ***! Llamar a la propiedad exactamente igual al selector en el ejemplo es `appUnless`***
+  - En este ejemplo construimos algo muy parecido al `*ngIf` Directive.
+
+  ```ts
+    import { Directive, Input } from '@angular/core';
+
+    @Directive({
+      selector: '[appUnless]' // Al menos... es el selector
+    })
+
+    export class UnlessDirective {
+      @Input() set unless(value: boolean) { // Se convirtio en una propiedad con super poder gracias al set
+        if(!value){ // any condition
+          this.vcRef.createEMbeddedView(this.templateRef) // Aquí indicamos que se cree la vista en este view container
+        } esle {
+          this.vcRef.clear(); // Aquí limpiamos el lugar en el DOM
+        }
+      } 
+
+      constructor(
+        private templateRef: TemplateRef<any>, // Tenemos que importar la referencia, sería el What?
+        private vcRef: ViewContainerRef// Importamos la vista de Referencia, aquí indicamos el Where?
+      ) {}
+    }
+  ```
+  Lo usamos / llamamos en el Template de la siguiente forma:
+
+  ```html
+    <div *appUnless='!someCondition'>...any<div>
+  ```
