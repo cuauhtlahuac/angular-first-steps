@@ -211,7 +211,19 @@ ___
 ___
 #### *ngIf
 ___
+#### *ngSwitch
 
+  Usage:
+
+  ```html
+    <div [ngSwitch]="value">
+      <p *ngSitchCase="5">Val 5</p>
+      <p *ngSitchCase="10">Val 10</p>
+      <p *ngSitchCase="100">Val 100</p>
+      <p *ngSitchDefault>Val Default</p>
+    </div>
+  ```
+___
 #### Building a Structural Directive
 
   - En el ejemplo si el inpuit parametro llamado appUnless cambia quiero ejecutar un metodo, para eso usamos el `set` keyword, esto convierte la propiedad en un metodo aunque sigue siendo una propiedad que ejecutara algo si cambia.
