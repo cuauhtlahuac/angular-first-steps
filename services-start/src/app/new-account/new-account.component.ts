@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 
 import { AccountService } from '../accounts.service';
+import { LoggingService } from '../logging.service';
 
 @Component({
-  selector: 'app-new-account',
-  templateUrl: './new-account.component.html',
-  styleUrls: ['./new-account.component.css']
+	selector: 'app-new-account',
+	templateUrl: './new-account.component.html',
+	styleUrls: [ './new-account.component.css' ],
 })
 export class NewAccountComponent {
+	constructor(
+		private AccountService: AccountService,
+		private LoggingService: LoggingService,
+	) {}
 
-  constructor(private AccountService: AccountService){}
-
-  onCreateAccount(accountName: string, accountStatus: string) {
-    this.AccountService.addAccount(accountName, accountStatus);
-  }
+	onCreateAccount(accountName: string, accountStatus: string) {
+		this.AccountService.addAccount(accountName, accountStatus);
+	}
 }
