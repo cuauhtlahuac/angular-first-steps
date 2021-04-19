@@ -3,9 +3,9 @@
 ## Course Structure
 
 * The Basics.
-* [Component & Data bindings](./CourseStructure/ComponentDataBindings.md).
-* [Directives](./CourseStructure/Directives.md).
-* Service & Dependecy Injection *
+* [Component & Data bindings](./MaxCourseNotes/ComponentDataBindings.md).
+* [Directives](./MaxCourseNotes/Directives.md).
+* [Service & Dependency Injection](./MaxCourseNotes/ServiceDependencyInjection.md)
 * Routing * 
 * Observables: Async code *
 * Forms *
