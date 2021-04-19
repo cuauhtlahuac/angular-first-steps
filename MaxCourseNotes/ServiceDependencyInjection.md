@@ -57,3 +57,35 @@ export class NewAccountComponent {
 - AppModule is the highest level where we can put some service
 - In Services when Angular trough this error: *Can't resolve all parameters for AccountService: (?)*, means we need to add a metadata when we call a Service into a Service. It can be fixed calling **@Injectable()** Directive. One important detail is that we must call outside of the class as the others Directives.
 - New Versions of Angular recommends call in both services the Injectable Directive even if it do the injection or it's received the injection
+
+
+### Using Services for Cross-Component Communication
+
+
+- We create a emit event. We can create it inside of our Service,:
+
+
+```ts
+  statusUpdated = new EventEmitter<string>();
+```
+
+- Then emit where the service is called.
+
+```ts
+	onSetTo(status: string) {
+		this.AccountService.statusUpdated.emit(status);
+	}
+```
+- Then subscribe components to that emitter.
+
+  ```ts
+    constructor(
+      private AccountService: AccountService,
+    
+    ) {
+      this.AccountService.statusUpdated.subscribe((status: string) =>
+        alert('status: ' + status),
+      );
+    }
+  ```
+
