@@ -44,3 +44,8 @@ export class NewAccountComponent {
 }
 
 ```
+
+### Store and Manage Data
+
+- We can use Service to Manage and store data. 
+- One problem when update data is when we want update with a method but then get the data from the same service directly from the property it doesn't update.
