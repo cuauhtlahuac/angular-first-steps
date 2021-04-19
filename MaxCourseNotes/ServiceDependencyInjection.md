@@ -47,5 +47,10 @@ export class NewAccountComponent {
 
 ### Store and Manage Data
 
-- We can use Service to Manage and store data. 
-- One problem when update data is when we want update with a method but then get the data from the same service directly from the property it doesn't update.
+- We can use Service to Manage and store data.
+- We can Inject services into services
+- We can Inject services widely in the application.
+- We can propagate the instance of services trough the children components.
+- Important! If call the same instance in a parent component and children, it will be overwriting the data of his children, is the cause of the update data bug that we that we got
+- Each component where we inject the service will create a new instance of that injection.
+- **To fix** the bug we only need to delete the services from the provider where we dont want to create new instances, only use the instance.
