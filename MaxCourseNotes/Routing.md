@@ -23,3 +23,17 @@ export class AppModule { }
 ```html
   <router-outlet></router-outlet>
 ```
+
+### Navigating with Router Links
+
+- To avoid refresh of the entire page we can use the routerLink directives, we can use a string or an array with this directive but between []:
+
+```html
+  <a routerLink="/servers">Servers</a>
+  <a [ routerLink ] = "['users']">Users</a>
+```
+
+### Understanding navigation Paths
+
+- If we use relative paths ot gonna attach to the current path "servers", but if we use absolute path, it will navigate to the indicated path taking as reference de root: "/servers"
+- We can use "../servers" to go one or two levels from the current path
