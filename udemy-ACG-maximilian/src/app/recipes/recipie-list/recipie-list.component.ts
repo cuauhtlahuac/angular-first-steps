@@ -8,7 +8,6 @@ import { RecipeService } from '../recipe.service';
 	styleUrls: [ './recipie-list.component.css' ],
 })
 export class RecipieListComponent implements OnInit {
-	@Output() recipeSelected = new EventEmitter<Recipe>();
 	recipes: Recipe[];
 
 	onCreateRecipe(name, desc, urlImg) {
