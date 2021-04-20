@@ -6,7 +6,7 @@
 * [Component & Data bindings](./MaxCourseNotes/ComponentDataBindings.md).
 * [Directives](./MaxCourseNotes/Directives.md).
 * [Service & Dependency Injection](./MaxCourseNotes/ServiceDependencyInjection.md)
-* Routing * 
+* [Routing](./MaxCourseNotes/Routing.md)
 * Observables: Async code *
 * Forms *
 * Pipes: *
