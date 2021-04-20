@@ -1,29 +1,45 @@
-import { EventEmitter } from "@angular/core";
+import { EventEmitter } from '@angular/core';
+import { Ingredient } from '../shared/ingredient.module';
 import { Recipe } from './recipie-list/recipe.model';
 
 export class RecipeService {
- recipeSelected = new EventEmitter<Recipe>();
- private recipes: Recipe[] = [
+	recipeSelected = new EventEmitter<Recipe>();
+	private recipes: Recipe[] = [
 		new Recipe(
-			'a Test Recipe',
-			'This is simply text',
-			'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg',
+			'Tasty Tlayuda',
+			'Omakase de Tacos en la barra',
+			'https://images.otstatic.com/prod/24951776/1/large.jpg',
+			[
+         new Ingredient('creme', 1),
+         new Ingredient('sausage', 20) 
+      ],
+		),
+		new Recipe(
+			'Hawaiian Pizza',
+			'Delicious flavor',
+			'https://media.timeout.com/images/101833711/750/422/image.jpg',
+			[
+         new Ingredient('cheese', 3),
+         new Ingredient('tomatoes', 5) 
+      ],
 		),
 	];
 
-  getRecipes() {
-    return this.recipes.slice();
-  }
+	getRecipes() {
+		return this.recipes.slice();
+	}
 
-  createRecipe (name, desc, urlImg) {
-    this.recipes.push(
-      new Recipe(
-        name,
-        desc,
-        'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg',
-      ),
-    );
-  }
-  
-
+	createRecipe(name, desc, urlImg) {
+		this.recipes.push(
+			new Recipe(
+				name,
+				desc,
+				'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg',
+        [
+          new Ingredient('creme', 1),
+          new Ingredient('sausage', 20) 
+       ],
+			),
+		);
+	}
 }
