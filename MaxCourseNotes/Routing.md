@@ -55,3 +55,9 @@ export class AppModule { }
     <a routerLink="/">Home</a>
   </li>
 ```
+
+### Navigate Programmatically
+
+- What if we need to navigate after an action?
+- We can use the Router from angular/router
+- Then we can call `this.router.navigate(['servers']);`method
