@@ -37,3 +37,21 @@ export class AppModule { }
 
 - If we use relative paths ot gonna attach to the current path "servers", but if we use absolute path, it will navigate to the indicated path taking as reference de root: "/servers"
 - We can use "../servers" to go one or two levels from the current path
+
+### Styling Active Router Links
+
+- We can use routerLinkActive directive in the template to indicate the active element and we can indicate a class that we need when the route is active
+```html
+  <a routerLinkActive="active-class-we-need"></a>
+```
+- We can find an error with the empty route, because the component attached to it is ever active. To fix it we can add a especial configuration with **`[routerLinkActiveOption]="{ exact: true }"`**
+
+```html
+  <li
+    role="presentation"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <a routerLink="/">Home</a>
+  </li>
+```
