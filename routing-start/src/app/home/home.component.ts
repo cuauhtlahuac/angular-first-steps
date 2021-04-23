@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 
   onLoadServer(){
     // complex calculation
-    this.router.navigate(['servers']);
+
   }
 
 }
