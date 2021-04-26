@@ -156,6 +156,8 @@ To this:
   ] }
 ```
 
+- We need to indicate where the children needs to be showing, in this case is **ServerComponent** as the parent, and is here where we need to put the router Outlet tag
+
 To fix possible issue ('cannot find outlet to load'), we need to something in the template, we need to add the outlet to the children to:
 
 ```html
