@@ -1,5 +1,7 @@
 # Angular Routing Notes
 
+[Docs](https://angular.io/guide/router)
+
 ### Setting up and Loading Routes
 
 - Better place to config is App Module.
@@ -191,7 +193,6 @@ To fix possible issue ('cannot find outlet to load'), we need to something in th
     this.router.navigate(['edit'], { relativeTo: this.route, queryParamsHandling: 'preserve' } )
   }
 ```
-
 ### Redirecting and Wildcard Routes
 
 - Here we use redirectTo
