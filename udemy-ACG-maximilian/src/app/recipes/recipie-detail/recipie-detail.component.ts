@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { Recipe } from '../recipie-list/recipe.model';
 import { RecipeService } from '../recipe.service';
@@ -11,17 +11,16 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipieDetailComponent implements OnInit {
 	recipe: Recipe;
-	id;
+	id: number;
 	constructor(
 		private recipeService: RecipeService,
 		private route: ActivatedRoute,
 	) {}
 
 	ngOnInit(): void {
-		this.route.params.subscribe(params => {
-			this.id = params['id'];
-      console.log('ijis');
-      this.recipe = this.recipeService.getRecipes()[this.id];
+		this.route.params.subscribe((params: Params) => {
+			this.id = +params['id'];
+      this.recipe = this.recipeService.getRecipe(this.id);
 		});
 	}
 
