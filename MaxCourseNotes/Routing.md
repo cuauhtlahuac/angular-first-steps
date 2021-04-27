@@ -37,7 +37,7 @@ export class AppModule { }
 
 ### Understanding navigation Paths
 
-- If we use relative paths ot gonna attach to the current path "servers", but if we use absolute path, it will navigate to the indicated path taking as reference de root: "/servers"
+- If we use relative paths to gonna attach to the current path "servers", but if we use absolute path, it will navigate to the indicated path taking as reference de root: "/servers"
 - We can use "../servers" to go one or two levels from the current path
 
 ### Styling Active Router Links
@@ -63,6 +63,39 @@ export class AppModule { }
 - What if we need to navigate after an action?
 - We can use the Router from angular/router
 - Then we can call `this.router.navigate(['servers']);`
+
+example:
+
+```ts
+import { ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+	selector: 'app-recipe-list',
+	templateUrl: './recipie-list.component.html',
+	styleUrls: [ './recipie-list.component.css' ],
+})
+
+export class RecipieListComponent implements OnInit {
+
+	constructor(
+    private router: Router,
+    private route: ActivatedRoute, // We need this to inform to router where it is
+    ) {}
+
+	onCreateRecipe(name, desc, urlImg) {
+			this.router.navigate([ 'new' ], // this will navigate to the specific route
+      { relativeTo: this.route }); // In this object we inform were the router is to make the navigation correctly
+	}
+
+  onNavigateTo(){
+    // This is other way to do a navigation
+    this.router.navigate([ 
+      '../', // Go one step back in the path
+      id, 'edit' // then we indicate in the same array the next path  .../3/edit
+      ],
+  }
+}
+```
 
 #### Relative Paths
 
