@@ -7,7 +7,7 @@
 * [Directives](./MaxCourseNotes/Directives.md).
 * [Service & Dependency Injection](./MaxCourseNotes/ServiceDependencyInjection.md)
 * [Routing](./MaxCourseNotes/Routing.md)
-* Observables: Async code *
+* [Observables](./MaxCourseNotes/Observables.md): Async code *
 * Forms *
 * Pipes: *
 * Http: *

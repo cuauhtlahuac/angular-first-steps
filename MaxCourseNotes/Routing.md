@@ -92,7 +92,7 @@ export class RecipieListComponent implements OnInit {
     this.router.navigate([ 
       '../', // Go one step back in the path
       id, 'edit' // then we indicate in the same array the next path  .../3/edit
-      ],
+      ])
   }
 }
 ```
