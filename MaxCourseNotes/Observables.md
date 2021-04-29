@@ -44,3 +44,24 @@ export class HomeComponent implements OnInit, OnDestroy {
 }
 
 ```
+
+### Creating a custom Observable
+
+- Here we create a similar observables as provided by the rxjs library
+
+```ts
+ngOnInit() {
+	const customIntervalObservable =	Observable.create(
+		observer => // is the listener
+		  {
+			 let count = 0;
+			 setInterval( () => {
+				 observer.next(count); // To emit a new value
+				 count++
+			 }, 1000)
+		 })
+		
+	customIntervalObservable.subscribe(data => { // receiving the data emitting
+		console.log({data});
+	});		 
+```
