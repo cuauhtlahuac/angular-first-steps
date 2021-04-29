@@ -129,3 +129,25 @@ ngOnInit() {
 ```
 
 - In error or complete the observable will be stopped
+
+## Operators
+
+- Rxjs has operators to manipulate the data
+
+```ts
+		customIntervalObservable.pipe( // Here we use a observable pipe method to transform the data before is used by the subscribe
+			map((data) => {  // Map is a rxjs operator
+			return 'round: ' + data;
+		}))
+		.subscribe(
+			data => { // receiving the data emitting
+				console.log({ data });
+			},
+			error => { // the second argument is something that should append if there is and error
+				alert('Time is up');
+			},
+			() => { // Third argument is for complete actions, complete doesn't pass any argument
+				alert('The time has completed')
+			}
+		);
+```
