@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, throwError } from 'rxjs';
 
 @Component({
 	selector: 'app-home',
@@ -18,7 +18,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 		  {
 			 let count = 0;
 			 setInterval( () => {
-				 observer.next(count); // To emit a new value
+				 if(count < 3) {
+					 observer.next(count); // To emit a new value
+				 } else {
+					 observer.error(new Error('time is up'))
+				 }
 				 count++
 			 }, 1000)
 		 })
