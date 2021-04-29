@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		) => {
 			let count = 0;
 			setInterval(() => {
+				if(count === 2) observer.complete(); // Here we complete the observable, it execute before  reach the error and never be emitted
 				if (count < 3) {
 					observer.next(count); // To emit a new value
 				} else {
@@ -33,6 +34,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 			error => { // the second argument is something that should append if there is and error
 				alert('Time is up');
 			},
+			() => { // Third argument is for complete actions, complete doesn't pass any argument
+				alert('The time has completed')
+			}
 		);
 	}
 
