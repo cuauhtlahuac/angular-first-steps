@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
 	selector: 'app-home',
@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 			}, 1000);
 		});
 
-		customIntervalObservable.pipe(map((data) => { // Here we use a pipe to transform the data before is used by the subscribe
+		customIntervalObservable.pipe(filter(data => data > 0) // here we also use filter, that only return the value if is grater than 0
+		, map((data) => { // Here we use a pipe to transform the data before is used by the subscribe
 			return 'round: ' + data;
 		}))
 		.subscribe(
@@ -45,6 +46,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 	}
 
 	ngOnDestroy(): void {
-		this.firstSubscription.unsubscribe(); // Here we unsubscribe
+		
 	}
 }

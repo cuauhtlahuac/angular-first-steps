@@ -132,7 +132,7 @@ ngOnInit() {
 
 ## Operators
 
-- Rxjs has operators to manipulate the data
+- Rxjs has operators to manipulate the data, map is the most used
 
 ```ts
 		customIntervalObservable.pipe( // Here we use a observable pipe method to transform the data before is used by the subscribe
@@ -150,4 +150,13 @@ ngOnInit() {
 				alert('The time has completed')
 			}
 		);
+```
+
+-Adding another operator
+
+```ts
+	customIntervalObservable.pipe(filter(data => data > 0) // here we also use filter, that only return the value if is grater than 1
+		, map((data) => { // Here we use a pipe to transform the data before is used by the subscribe
+			return 'round: ' + data;
+		}))
 ```
