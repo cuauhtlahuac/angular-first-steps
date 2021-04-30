@@ -37,10 +37,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 				console.log({ data });
 			},
 			error => { // the second argument is something that should append if there is and error
-				alert('Time is up');
+				//alert('Time is up');
 			},
 			() => { // Third argument is for complete actions, complete doesn't pass any argument
-				alert('The time has completed')
+				//alert('The time has completed')
 			}
 		);
 	}
