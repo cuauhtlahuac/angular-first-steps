@@ -2,6 +2,10 @@
 
 [Observables Documentation](https://angular.io/guide/observables-in-angular)
 
+[Official Docs](https://rxjs-dev.firebaseapp.com/)
+[RxjS Academind Series](https://academind.com/tutorials/understanding-rxjs/)
+[RxJS 6 - What Changed?](https://academind.com/tutorials/rxjs-6-what-changed/)
+
 ### What is an Observable?
 
 - Is basically an object imported from a third party package Rxjs.
