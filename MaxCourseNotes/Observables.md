@@ -155,8 +155,42 @@ ngOnInit() {
 -Adding another operator
 
 ```ts
-	customIntervalObservable.pipe(filter(data => data > 0) // here we also use filter, that only return the value if is grater than 1
+	customIntervalObservable.pipe(filter(data => data > 0) // here we also use filter, that only return the value if is grater than 0
 		, map((data) => { // Here we use a pipe to transform the data before is used by the subscribe
 			return 'round: ' + data;
 		}))
+```
+
+#### Subject operator
+
+- Is an special and more active operator, because you can call next outside of the Observable
+
+
+- Here we declare de new Subject
+```ts
+activatedEmitter = new Subject<boolean>();
+```
+
+- Here we pass the data with the use of next method, you can call more
+```ts
+onActivate() {
+    this.userService.activatedEmitter.next(true);
+    this.userService.activatedEmitter.next(false);
+    this.userService.activatedEmitter.next(true);
+  }
+```
+
+- Here we passing the data
+```ts
+	ngOnInit() {
+    this.userService.activatedEmitter.subscribe(( active )=> this.userActive = active)
+  }
+```
+
+- Here we unsubscribe the subscription
+
+```ts
+  ngOnDestroy(): void {
+    this.userService.activatedEmitter.unsubscribe();    
+  }
 ```

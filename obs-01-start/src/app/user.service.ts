@@ -1,8 +1,9 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 //shortcut to avoid have to be declared in module providers
 @Injectable({ providedIn: 'root' })
 
 export class UserService {
-	activatedEmitter = new EventEmitter<boolean>();
+	activatedEmitter = new Subject<boolean>(); // His declaration pretty similar to emitter
 }
