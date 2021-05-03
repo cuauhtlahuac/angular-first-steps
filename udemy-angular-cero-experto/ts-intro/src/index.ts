@@ -1,17 +1,27 @@
-interface Personaje {
-	// Es un forma de indicar como queremos que un objeto luzca
-	nombre: String;
-	hp: Number;
-	habilidades: String[];
-	puebloNatal?: String; // El parentesis le dice que TS que es opcional
+function sumar(
+	a: number, // primer parametro con tipo de dato
+	b: number // segundo parámetro especificado
+): number // tipo de dato que será retornado
+{
+	return a + b;
+}
+function multiplicar(
+	// El orden de argumentos es primero obligatorios luego opcionales
+	numero: number,
+	otroNumero?: number, // Este es opcional pero para que no truene al siguiente argumento le damos valor default
+	base: number = 2, //  Valor opcional deben ir al último
+): number
+{
+	return numero * base * otroNumero;
 }
 
-const personaje: Personaje = {
-	nombre: 'Strider',
-	hp: 100,
-	habilidades: [ 'bash', 'Counter', 'Header' ],
-};
+const resultado = sumar(5, 6);
+const mResultado = 
+multiplicar(
+	5, // Toma el argumento numero
+	9, // Toma argumento otroNumero
+	10, // Asigna valor de 10 para no usar el default 2
+)
 
-personaje.puebloNatal = 'Zacatlán de las manzanas';
-
-console.table(personaje)
+console.log(resultado);
+console.log(mResultado);
