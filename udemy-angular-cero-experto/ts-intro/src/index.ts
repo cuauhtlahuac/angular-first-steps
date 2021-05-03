@@ -1,42 +1,23 @@
-interface SuperHero {
-	nickName: string;
-	name: string;
-	lastName: string;
-	age: number;
-	address: Address;
-	showAddress: () => string;
-	realName: string;
+class Hero {
+	// Private, Public, Static: Es el alcance o visibilidad de los mismos
+
+	/*
+		Este bloque luce parecido a una interface, pero:
+			- Las interfases no se compilan a js
+			- Las interfases son como clases tontas
+	*/
+	private alterEgo: string = 'ego'; // Solo visible dentro de esta clase
+	public age: number = 0; // Afuera 
+	private realName: string = 'real';
+	static something: any = 'something'; // Static property que se puede acceder sin la necesidad de instanciarla. ex: Hero.something, para acceder dentro de la clase escribir Hero.something
+
+	printProfile() {
+		return this.alterEgo + ' ' + this.realName + ' ' + Hero.something
+	}
 }
 
-interface Address {
-	street: string;
-	country: string;
-	city: string;
-}
+const ironMan = new Hero();
+console.log(ironMan.printProfile());
 
-const superHero: SuperHero = {
-	nickName: 'Spiderman',
-	name: 'Petter',
-	lastName: 'Parker',
-	age: 30,
-	address: {
-		street: 'Main St',
-		country: 'USA',
-		city: 'NY',
-	},
-	showAddress() {
-		return `${this.nickName}, ${this.address.street}, ${this.address.city}`;
-	},
-	get realName() {
-		return `${this.name}, ${this.lastName}`;
-	},
-	set realName(newRealName) {
-		[ this.name, this.lastName ] = newRealName.split(' ');
-	},
-};
 
-console.log(superHero);
 
-superHero.realName = 'Miles Morales';
-console.log(superHero);
-console.log(superHero.showAddress());
