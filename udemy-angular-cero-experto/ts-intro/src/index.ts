@@ -1,34 +1,42 @@
-interface Personaje {
-	nombre: string;
-	pv: number;
-	muestraHP: () => void;
-	apellido: string;
-	fullname?: string;
+interface SuperHero {
+	nickName: string;
+	name: string;
+	lastName: string;
+	age: number;
+	address: Address;
+	showAddress: () => string;
+	realName: string;
 }
 
-function curar(
-	personaje: Personaje,
-	curarX,
-): void { // Con void indicamos que no retorna nada, aunque JS retorna undefine
-	personaje.pv += curarX;
+interface Address {
+	street: string;
+	country: string;
+	city: string;
 }
 
-const nuevoPersonaje: Personaje = {
-	nombre: 'Batman',
-	apellido: 'unknown',
-	pv: 50,
-	muestraHP(): void {
-		console.log('Puntos de vida: ', this.pv);
+const superHero: SuperHero = {
+	nickName: 'Spiderman',
+	name: 'Petter',
+	lastName: 'Parker',
+	age: 30,
+	address: {
+		street: 'Main St',
+		country: 'USA',
+		city: 'NY',
 	},
-	get fullname() {
-		return this.apellido ? `${this.nombre} ${this.apellido}` : `${this.nombre}`
+	showAddress() {
+		return `${this.nickName}, ${this.address.street}, ${this.address.city}`;
 	},
-	set fullname(value) {
-		[this.nombre, this.apellido] = value.split(" ");
+	get realName() {
+		return `${this.name}, ${this.lastName}`;
+	},
+	set realName(newRealName) {
+		[ this.name, this.lastName ] = newRealName.split(' ');
 	},
 };
 
-curar(nuevoPersonaje, 20);
+console.log(superHero);
 
-nuevoPersonaje['fullname'] = 'Bruno Díaz'
-console.log(nuevoPersonaje);
+superHero.realName = 'Miles Morales';
+console.log(superHero);
+console.log(superHero.showAddress());
